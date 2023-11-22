@@ -28,6 +28,7 @@ if playerctl_status="$(playerctl --player=$player status 2>/dev/null)"; then
   status="$playerctl_status"
 else
   status="no player"
+  rm "$cover_loc"
 fi
 
 # show usage
