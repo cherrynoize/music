@@ -8,9 +8,29 @@ default_span_length="24"
 default_scroll_delay="0.3"
 default_scroll_padding_text="  "
 
+# show usage
+usage () {
+cat<<EOF
+usage:
+  scroll-music [options]
+options:
+  -n|--no-scroll      do not scroll
+  -l|--length LENGTH  buffer length for scrolling
+  -d|--delay DELAY    delay for scroll updates in seconds
+  -P|--padding TEXT   padding text between scrolls
+  -h|--help           show this help message
+
+any other argument is passed as is to 'music'.
+EOF
+}
+
 # parse args
 while [ -n "$1" ]; do
   case "$1" in
+    -h|--help)
+      usage
+      exit
+      ;;
     -n|--no-scroll)
       no_scroll=1
       ;;
