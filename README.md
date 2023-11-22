@@ -26,4 +26,5 @@ ln scroll-music /usr/local/bin/scroll-music
 
 ```
 music help
+scroll-music --help
 ```
